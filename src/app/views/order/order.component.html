@@ -1,0 +1,46 @@
+<section class="order" id="order">
+  <div class="container">
+    <div class="order-text" id="paying">
+      <div class="order-text-title double-title">
+<!--        <a routerLink="/order" [queryParams]="{product: 'test'}">Хватит думать!</a> Доставим заказ за 30 минут!-->
+        <a routerLink="/order" [queryParams]="{product: formValues.productTitle + ' 1'}">Хватит думать!</a> Доставим заказ за 30 минут!
+      </div>
+      <div class="order-text-message" (click)="test()">
+        Мы гарантированно доставим вашу пиццу за 30 минут с момента оформления заказа. Если мы опоздаем даже на
+        1 минуту - вы получаете весь заказ бесплатно и ваучер на скидку на следующий заказ. Мы гордимся нашим
+        сервисом и сделаем всё, чтобы наш клиент был доволен и не остался голодный!
+      </div>
+    </div>
+    <div class="order-form">
+<!--      <input type="text" coolInput-->
+<!--             [coolInputDefaultBgColor]="'gray'" pInputText-->
+<!--             [coolInputFocusBgColor]="'red'"-->
+<!--             placeholder="Пицца" class="order-input" id="product-input" [(ngModel)]="formValues.productTitle">-->
+<!--      <input type="text" placeholder="Адрес доставки" class="order-input" id="address-input" [(ngModel)]="formValues.address">-->
+<!--      <input type="text" placeholder="Телефон" class="order-input" coolInput id="phone-input" [(ngModel)]="formValues.phone">-->
+
+      <span class="p-float-label">
+        <input type="text" class="order-input" id="product-input" pInputText [(ngModel)]="formValues.productTitle">
+        <label for="product-input">Пицца</label>
+      </span>
+
+      <span class="p-float-label">
+        <input type="text" class="order-input" id="address-input" pInputText [(ngModel)]="formValues.address">
+        <label htmlFor="address-input">Адрес</label>
+      </span>
+      <span class="p-float-label">
+        <input type="text" class="order-input" id="phone-input" pInputText [(ngModel)]="formValues.phone">
+        <label htmlFor="phone-input">Телефон</label>
+      </span>
+
+<!--      <input type="text"  pInputText-->
+<!--             placeholder="Пицца" class="order-input" id="product-input" [(ngModel)]="formValues.productTitle">-->
+<!--      <input type="text" placeholder="Адрес доставки" class="order-input" pInputText id="address-input" [(ngModel)]="formValues.address">-->
+<!--      <input type="text" placeholder="Телефон" class="order-input" pInputText id="phone-input" [(ngModel)]="formValues.phone">-->
+      <button tuiButton class="btn" (click)="createOrder()">Оформить заказ</button>
+    </div>
+    <div class="order-image">
+      <img src="../../../assets/images/pizzzzza.png" alt="Pizza">
+    </div>
+  </div>
+</section>
