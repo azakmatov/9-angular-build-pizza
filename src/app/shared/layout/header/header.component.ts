@@ -9,6 +9,7 @@ import {AuthService} from "../../../core/auth/auth.service";
 })
 export class HeaderComponent implements OnInit {
   loggedState: boolean = false;
+  openClass: boolean = false;
   constructor(public cartService: CartService, private authService: AuthService) {  }
   ngOnInit(): void {
     // this.authService.isLoggedSubject.subscribe((isLoggedIn: boolean) => {
@@ -25,5 +26,13 @@ export class HeaderComponent implements OnInit {
 
   logout() {
     this.authService.logOut();
+  }
+
+  openTrue() {
+    this.openClass = true;
+  }
+
+  openFalse() {
+    this.openClass = false;
   }
 }

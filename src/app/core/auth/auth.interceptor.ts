@@ -14,7 +14,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
     const authToken = this.authService.getToken();
     // просто для проверки выводим в консоль
-    console.log(req);
+    // console.log(req);
     const authReq = req.clone({
         headers: req.headers.set('Authorization', authToken)
     }); // создаёт копию и возвращает изменённый экземпляр запроса, так как мы не можем изменять req (req - это не изменяемый объект), а можем просто заменить его изменённым клоном

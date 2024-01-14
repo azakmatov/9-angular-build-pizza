@@ -4,6 +4,7 @@ import {from, map, Observable, Subject, Subscription} from "rxjs";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {PopupComponent} from "../../../shared/components/popup/popup.component";
 import {PopComponent} from "../../../shared/components/pop/pop.component";
+import {Router} from "@angular/router";
 
 // declare var bootstrap: any;
 // import * as bootstrap from "bootstrap";
@@ -18,7 +19,7 @@ export class MainComponent implements OnInit, OnDestroy, AfterViewInit {
   private subscription: Subscription | null = null;
   private subject: Subject<number>;
 
-  constructor(public cartService: CartService, private modalService: NgbModal) { // тут инжектим NgbModal
+  constructor(public cartService: CartService, private modalService: NgbModal, private router: Router) { // тут инжектим NgbModal
 
     this.subject = new Subject<number>();
 
@@ -143,6 +144,7 @@ export class MainComponent implements OnInit, OnDestroy, AfterViewInit {
       .subscribe((param: string) => {
       console.log(param + ' click');
     });
+    this.router.navigate(['/products']);
   }
 
 }
